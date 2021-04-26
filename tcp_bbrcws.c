@@ -862,7 +862,6 @@ static void bbr_set_upper_scaling(struct sock *sk, const struct rate_sample *rs)
 				bbr->upper_scale = 100; 
 			bbr->loss_checked_stamp = tcp_jiffies32; 
 		}
-
 	}
 }
 
@@ -878,8 +877,6 @@ static void bbr_main(struct sock *sk, const struct rate_sample *rs)
 	bbr_set_tso_segs_goal(sk);
 	bbr_set_cwnd(sk, rs, rs->acked_sacked, bbr->estimated_bw, bbr->cwnd_gain);
 	bbr_set_upper_scaling(sk, rs);
-
-
 }
 
 static void bbr_init(struct sock *sk)
